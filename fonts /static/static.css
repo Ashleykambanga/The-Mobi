@@ -1,0 +1,20 @@
+@font-face {
+    font-family:("Oswald-VariableFont_wght.ttf");
+    src: url(/Oswald/Oswald-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: ("Oswald-Bold.ttf");
+    src: url(/fonts\ /Oswald-Bold);
+}
+@font-face {
+    font-family:("Renner-Book.ttf") ;
+    src: url(/fonts\ /Renner-Book);
+}
+@font-face {
+    font-family: ("Oswald-Regular.ttf");
+    src: url(/fonts\ /Oswald-Regular);
+}
+@font-face {
+    font-family:("Oswald-Light.ttf") ;
+    src: url(/Oswald/static/Oswald-Light.ttf);
+}

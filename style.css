@@ -1,0 +1,775 @@
+@charset "UTF-8";
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+caption,
+tbody,
+tfoot,
+thead,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+table,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+body,
+html {
+  line-height: 1;
+  overflow-x: hidden;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ”;
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+/* change colours to suit your needs */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input,
+select {
+  vertical-align: middle;
+}
+
+@font-face {
+  font-family: "Oswald-Bold.ttf";
+  src: url(/fonts\ /Oswald-Bold);
+}
+@font-face {
+  font-family: "Renner-Book.ttf";
+  src: url(/fonts\ /Renner-Book);
+}
+@font-face {
+  font-family: "Oswald-Regular.ttf";
+  src: url(/fonts\ /Oswald-Regular);
+}
+@font-face {
+  font-family: "Oswald-Light.ttf";
+  src: url("./fonts /");
+}
+.header {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.header .hero h1 {
+  margin-left: 70px;
+  padding: 5px;
+  font-size: 65px;
+  font-family: "Oswald-Bold.ttf";
+}
+.header .hero h1 span {
+  color: #ff7f00;
+}
+.header .hero .inner2 img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+.header .logo a img {
+  width: 16%;
+  padding-bottom: 0%;
+}
+
+.menu {
+  background-color: rgb(215, 123, 65);
+  position: absolute;
+  width: 100%;
+  top: -21px;
+  left: -100vw;
+  opacity: 0;
+  transition: 0.4s ease;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 998;
+}
+.menu .menu-item {
+  padding: 15px 20px;
+  list-style: none;
+}
+.menu .menu-item a {
+  font-weight: 900;
+}
+.menu .menu-item .nav-link:hover {
+  transition: all 0.6s ease;
+  color: rgb(215, 123, 65);
+}
+
+.hamburger {
+  height: 30px;
+  width: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hamburger .bar {
+  height: 5px;
+  width: 100%;
+  background-color: black;
+  border-radius: 5px;
+  z-index: 999;
+}
+.hamburger #top {
+  transform: translateY(-4px);
+  transition: all 0.6s ease;
+}
+.hamburger #middle {
+  transition: all 0.6s ease;
+}
+.hamburger #bottom {
+  transform: translateY(4px);
+  transition: all 0.6s ease;
+}
+
+.open {
+  opacity: 1;
+  left: 0;
+}
+.open #top {
+  transform: translateY(5px) rotate(135deg);
+}
+.open #middle {
+  opacity: 0;
+  transform: rotate(360deg);
+}
+.open #bottom {
+  transform: translateY(-5px) rotate(-135deg);
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 568px) {
+  .header .menu {
+    top: 0;
+  }
+}
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {
+  .header .menu {
+    top: 0;
+  }
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .header {
+    padding: 30px 0;
+    align-items: center;
+    margin-top: 0;
+  }
+  .header .menu {
+    position: relative;
+    top: -166px;
+    width: 100%;
+    left: 21%;
+    opacity: 1;
+    display: flex;
+    border-radius: 6px;
+    justify-content: center;
+    background-color: white;
+    align-items: center;
+    flex-direction: row;
+  }
+  .header .menu .menu-item {
+    padding: 27px 10px;
+  }
+  .header .menu .menu-item a {
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  .header .menu .menu-item a img {
+    width: 40px;
+  }
+  .header .menu .menu-item .bold {
+    font-size: 33px;
+  }
+  .header .hamburger {
+    display: none;
+  }
+}
+.About {
+  background-color: black;
+  padding-bottom: 100px;
+}
+.About .card {
+  height: 68%;
+  width: 85%;
+  margin-top: -17%;
+  background-color: #FF7F00;
+  margin-left: 60px;
+  padding: 40px;
+}
+.About .card .card-body h2 {
+  padding-top: 30px;
+  margin-left: 55px;
+  line-height: 1.5;
+  font-size: 25px;
+  font-family: "Oswald-Regular.ttf";
+}
+.About .card .card-body p {
+  padding-top: 40px;
+  width: 90%;
+  font-size: 15px;
+  margin-left: 55px;
+  line-height: 1.5;
+  font-family: "Oswald-Light.ttf";
+}
+.About .image img {
+  padding-top: 15%;
+  padding-bottom: 15%;
+  width: 70%;
+  margin-left: 100px;
+}
+.About .second {
+  color: rgb(200, 194, 194);
+  width: 70%;
+  margin-left: 90px;
+  line-height: 1.5;
+  font-family: "Oswald-Light.ttf";
+  padding-top: 8%;
+}
+.About .part1 {
+  background-color: white;
+  height: 73%;
+  text-align: center;
+  padding-top: 35px;
+  font-size: 23px;
+  margin-top: 70px;
+  font-family: "Oswald-Bold.ttf";
+}
+.About .part2 {
+  background-color: white;
+  height: 73%;
+  text-align: center;
+  padding-top: 35px;
+  font-size: 23px;
+  margin-top: 70px;
+  font-family: "Oswald-Bold.ttf";
+}
+.About .part3 {
+  background-color: #FF7F00;
+  height: 73%;
+  width: 91%;
+  text-align: center;
+  padding-top: 35px;
+  font-size: 23px;
+  color: white;
+  margin-top: 70px;
+  font-family: "Oswald-Bold.ttf";
+}
+
+.gallery {
+  margin-top: 110px;
+  margin-bottom: 110px;
+}
+.gallery img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.gallery .color {
+  background-color: black;
+  font-size: 23px;
+}
+.gallery .color span {
+  color: #ff7f00;
+}
+.gallery .color p {
+  padding-top: 20%;
+  font-size: 27px;
+  line-height: 40px;
+  color: white;
+  font-family: "Oswald-Bold.ttf";
+  padding-left: 8%;
+  padding-right: 8%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.gallery h2 {
+  margin-top: 20px;
+  margin-left: 42px;
+  font-size: 30px;
+  font-family: "Renner-Book.ttf";
+}
+.gallery h2 span {
+  color: #FF7F00;
+}
+.gallery h2 span hr {
+  width: 60px;
+  height: 3px;
+  position: relative;
+  left: 170px;
+  top: -48px;
+}
+.gallery p {
+  margin-bottom: 50px;
+  font-size: 16px;
+  color: black;
+  font-family: "Renner-Book.ttf";
+  line-height: 25px;
+}
+
+.Aims {
+  background-color: black;
+  padding-bottom: 5%;
+  padding-top: 5%;
+}
+.Aims .dd {
+  background-color: #FF7F00;
+  height: 476px;
+  margin-left: 67px;
+  padding: 115px;
+  line-height: 60px;
+  width: 41%;
+}
+.Aims .dd span {
+  color: white;
+}
+.Aims .dd p {
+  font-size: 38px;
+  width: 112%;
+}
+.Aims .ddd {
+  padding-left: 100px;
+  padding-right: 11px;
+}
+.Aims .ddd h4 {
+  color: #FF7F00;
+}
+.Aims .ddd h4 hr {
+  width: 80px;
+  position: relative;
+  left: 35%;
+  top: -32px;
+  height: 2px;
+}
+.Aims .ddd p {
+  font-size: 15px;
+  color: white;
+  font-family: Renner bold;
+  line-height: 29.6px;
+}
+
+.donate {
+  margin-top: 110px;
+  margin-bottom: 110px;
+}
+.donate h1 {
+  color: #FF7F00;
+  font-size: 69px;
+  width: 65%;
+  margin-left: 22%;
+  text-align: center;
+}
+.donate .para1 p {
+  line-height: 24.6px;
+}
+.donate .para2 p {
+  width: -1px;
+  line-height: 31px;
+  font-family: "Oswald-Light.ttf";
+}
+.donate img {
+  margin-left: 70px;
+  margin-top: 100px;
+}
+.donate .im6 {
+  bottom: 12px;
+  margin-left: 100px;
+}
+.donate .im7 {
+  position: relative;
+  top: 20px;
+  margin-left: 100px;
+}
+.donate .im8 {
+  position: relative;
+  top: 20px;
+  margin-left: 100px;
+}
+.donate .im9 {
+  margin-left: 100px;
+}
+.donate .im10 {
+  margin-left: 100px;
+}
+.donate .im11 {
+  margin-left: 100px;
+}
+.donate .im12 {
+  position: relative;
+  top: 20px;
+  margin-left: 100px;
+}
+.donate .im13 {
+  margin-left: 100px;
+}
+.donate .im14 {
+  margin-left: 100px;
+}
+.donate .im15 {
+  margin-left: 100px;
+}
+
+.contact {
+  background-color: black;
+  color: white;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.contact h5 {
+  color: white;
+  padding-bottom: 29px;
+  font-size: 18px;
+}
+.contact .list1 {
+  margin-left: 130px;
+  font-size: 12px;
+  line-height: 20px;
+}
+.contact .list2 {
+  margin-left: 155px;
+  font-size: 12px;
+  margin-bottom: 70px;
+  line-height: 20px;
+}
+.contact .list3 {
+  margin-left: 210px;
+  font-size: 12px;
+}
+.contact .list3 h5 {
+  margin-left: 20px;
+}
+.contact .list3 a {
+  color: white;
+  text-decoration: none;
+  position: absolute;
+}
+.contact .list3 .navv {
+  display: flex;
+  justify-content: space-evenly;
+  margin-right: 22%;
+}
+.contact hr {
+  height: 3px;
+  color: white;
+  border: 1px solid white;
+  width: 83%;
+  margin-left: 126px;
+}
+.contact .ccc {
+  padding-left: 127px;
+  padding-top: 57px;
+}
+.contact .ccc p {
+  color: rgba(255, 255, 255, 0.66);
+}
+.contact .ccc p .vv {
+  width: 18px;
+}
+.contact .ccc p .vvv {
+  width: 18px;
+}
+.contact .cc {
+  padding-top: 57px;
+}
+.contact .cc p {
+  color: rgba(255, 249, 249, 0.617);
+  font-size: 12px;
+}
+.contact .cc p .vvvv {
+  width: 12px;
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+  .About .card {
+    width: 100%;
+    margin: 0px;
+  }
+  .About .card .card-body h2 {
+    text-align: center;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+  }
+  .About .card .card-body p {
+    text-align: center;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    padding-top: 15px;
+  }
+  .About .image img {
+    padding: 0px;
+    margin: 30px;
+    width: 85%;
+  }
+  .About .part3 {
+    width: 100%;
+  }
+  .gallery .gallery img {
+    height: 95%;
+    padding: 0px;
+  }
+  .gallery .color p {
+    padding: 0px;
+    text-align: center;
+  }
+  .gallery h2 span {
+    text-align: center;
+  }
+  .gallery p {
+    text-align: center;
+  }
+  .Aims {
+    padding-top: 0px;
+  }
+  .Aims .dd {
+    margin: 0px;
+    padding: 10px;
+    width: 100%;
+    height: 322px;
+  }
+  .Aims .dd p {
+    width: 100%;
+    text-align: center;
+  }
+  .Aims .ddd {
+    padding: 12px;
+  }
+  .Aims .ddd h4 {
+    text-align: center;
+    font-size: 30px;
+    padding-bottom: 10%;
+    padding-top: 10%;
+  }
+  .Aims .ddd h4 hr {
+    display: none;
+  }
+  .Aims .ddd p {
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    text-align: center;
+  }
+  .donate {
+    line-height: 30px;
+    text-align: center;
+  }
+  .donate h1 {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    padding-bottom: 36px;
+  }
+  .donate img {
+    margin: 0px;
+    padding: 0px;
+    width: 70%;
+  }
+  .donate .im6 {
+    margin: 0px;
+  }
+  .donate .im7 {
+    margin: 0px;
+  }
+  .donate .im8 {
+    margin: 0px;
+  }
+  .donate .im9 {
+    margin: 0px;
+  }
+  .donate .im10 {
+    margin: 0px;
+  }
+  .donate .im11 {
+    margin: 0px;
+  }
+  .donate .im12 {
+    margin: 0px;
+  }
+  .donate .im13 {
+    margin: 0px;
+  }
+  .donate .im14 {
+    margin: 0px;
+  }
+  .donate .im15 {
+    margin: 0px;
+  }
+  .contact {
+    padding-top: 18px;
+    margin: 0px;
+  }
+  .contact h5 {
+    width: 100%;
+  }
+  .contact .list1 {
+    padding-left: 27px;
+    margin: 0px;
+  }
+  .contact .list2 {
+    padding-left: 30px;
+    margin: 0px;
+  }
+  .contact .list3 {
+    text-align: center;
+    padding: 0px;
+    margin: 16px;
+    padding-top: 58px;
+  }
+  .contact .list3 h5 {
+    text-align: center;
+    margin: 0px;
+  }
+  .contact .list3 .navv {
+    margin-right: 0px;
+  }
+  .contact hr {
+    margin-left: 36px;
+  }
+}/*# sourceMappingURL=style.css.map */
